@@ -5,7 +5,7 @@
 
         <!-- Brand -->
         <router-link class="brand" to="/">
-          <img src="/images/Logo.png" alt="SquareUp" class="brand-logo" />
+          <img :src="`${base}images/Logo.png`" alt="SquareUp" class="brand-logo" />
         </router-link>
 
         <!-- Custom hamburger toggler -->

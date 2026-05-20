@@ -5,7 +5,7 @@
     <div class="footer-top">
       <!-- Logo -->
       <router-link to="/" class="footer-brand">
-        <img src="/images/Logo.png" alt="SquareUp" class="footer-logo" />
+        <img :src="`${base}images/Logo.png`" alt="SquareUp" class="footer-logo" />
       </router-link>
 
       <!-- Nav links -->
@@ -80,6 +80,8 @@
 </template>
 
 <script setup>
+const base = import.meta.env.BASE_URL
+
 const footerLinks = [
   { to: '/',         label: 'Home'     },
   { to: '/services', label: 'Services' },
