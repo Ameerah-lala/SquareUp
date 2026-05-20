@@ -2,7 +2,6 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
 export default defineConfig({
+  base: '/SquareUp/',
   plugins: [vue()],
-  // Make the existing assets folder available from the project root
-  publicDir: '../assets',
 })
