@@ -37,7 +37,7 @@
         </div>
         <div class="row g-0">
           <div v-for="(job, i) in dept.jobs" :key="job.title" class="col-md-4 job-card" :data-aos="i % 2 === 0 ? 'flip-right' : 'flip-left'" :data-aos-delay="i * 100">
-            <img :src="`/images/${job.img}`" :alt="job.title" class="job-img" />
+            <img :src="`${base}images/${job.img}`" :alt="job.title" class="job-img" />
             <h4 class="job-title">{{ job.title }}</h4>
             <p class="job-desc">{{ job.desc }}</p>
             <button class="job-btn">Apply Now</button>
@@ -49,7 +49,7 @@
     <!-- CTA Banner -->
     <section class="career-cta-banner">
       <div class="cta-top" data-aos="fade-up">
-        <img src="/images/section6logo.png" alt="SquareUp" class="cta-logo" />
+        <img :src="`${base}images/section6logo.png`" alt="SquareUp" class="cta-logo" />
         <div class="cta-text">
           <h3 class="cta-h3">Today, SquareUp Continues to Thrive as a Leading Digital Product Agency.....</h3>
           <p class="cta-p">Combining the power of design, engineering, and project management to create transformative digital experiences. They invite you to join them on their journey and discover how they can help bring your digital ideas to life.</p>
@@ -69,6 +69,8 @@
 <script setup>
 import TheNavbar from '../components/TheNavbar.vue'
 import TheFooter from '../components/TheFooter.vue'
+
+const base = import.meta.env.BASE_URL
 
 const benefits = [
   { title: 'Innovative and Impactful Projects', desc: "At SquareUp, you'll have the opportunity to work on exciting and impactful projects that shape the digital landscape. From designing intuitive user interfaces to developing robust software solutions, you'll be part of a team that creates products that make a difference." },

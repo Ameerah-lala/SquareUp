@@ -19,7 +19,7 @@
       <div class="row g-0">
         <div v-for="(step, i) in steps" :key="step.title" class="col-md-6 step-card" data-aos="fade-up" :data-aos-delay="(i % 2) * 100">
           <div class="d-flex align-items-center step-header">
-            <img :src="`/images/${step.img}`" :alt="step.title" class="step-img" />
+            <img :src="`${base}images/${step.img}`" :alt="step.title" class="step-img" />
             <h3 class="step-h3">{{ step.title }}</h3>
           </div>
           <p class="step-p">{{ step.desc }}</p>
@@ -29,7 +29,7 @@
 
     <!-- CTA -->
     <section class="process-cta text-center">
-      <img src="/images/section6logo.png" alt="SquareUp" class="cta-logo" data-aos="fade-up" />
+      <img :src="`${base}images/section6logo.png`" alt="SquareUp" class="cta-logo" data-aos="fade-up" />
       <h2 class="cta-h2" data-aos="fade-up" data-aos-delay="100">Thank you for your Interest in SquareUp.</h2>
       <p class="cta-p" data-aos="fade-up" data-aos-delay="200">We would love to hear from you and discuss how we can help bring your digital ideas to life. Here are the different ways you can get in touch with us.</p>
       <button class="cta-btn" data-aos="fade-up" data-aos-delay="300">Start Project</button>
@@ -46,6 +46,8 @@
 import TheNavbar   from '../components/TheNavbar.vue'
 import TheFooter   from '../components/TheFooter.vue'
 import ContactForm from '../components/ContactForm.vue'
+
+const base = import.meta.env.BASE_URL
 
 const steps = [
   {

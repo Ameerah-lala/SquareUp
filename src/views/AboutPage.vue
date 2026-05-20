@@ -16,7 +16,7 @@
       </div>
       <div class="col-md-6 intro-right" data-aos="fade-up" data-aos-delay="100">
         <div class="intro-visual">
-          <img src="/images/section6logo.png" alt="SquareUp" class="intro-logo" />
+          <img :src="`${base}images/section6logo.png`" alt="SquareUp" class="intro-logo" />
         </div>
       </div>
     </div>
@@ -29,7 +29,7 @@
       <div class="row g-0">
         <div v-for="(chapter, i) in story" :key="chapter.title" class="col-md-6 story-card" data-aos="fade-up" :data-aos-delay="(i % 2) * 100">
           <div class="d-flex align-items-center mb-3 story-card-header">
-            <img :src="`/images/${chapter.img}`" :alt="chapter.title" class="story-img" />
+            <img :src="`${base}images/${chapter.img}`" :alt="chapter.title" class="story-img" />
             <h3 class="story-title">{{ chapter.title }}</h3>
           </div>
           <p class="story-p">{{ chapter.desc }}</p>
@@ -41,7 +41,7 @@
     <section class="about-cta">
       <!-- Top row: logo + heading + description -->
       <div class="cta-top" data-aos="fade-up">
-        <img src="/images/section6logo.png" alt="SquareUp" class="cta-logo" />
+        <img :src="`${base}images/section6logo.png`" alt="SquareUp" class="cta-logo" />
         <div class="cta-text">
           <h3 class="cta-h3">Today, SquareUp Continues to Thrive as a Leading Digital Product Agency.....</h3>
           <p class="cta-p">Combining the power of design, engineering, and project management to create transformative digital experiences. They invite you to join them on their journey and discover how they can help bring your digital ideas to life.</p>
@@ -62,6 +62,8 @@
 <script setup>
 import TheNavbar from '../components/TheNavbar.vue'
 import TheFooter from '../components/TheFooter.vue'
+
+const base = import.meta.env.BASE_URL
 
 const story = [
   {

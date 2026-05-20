@@ -149,7 +149,7 @@
     <!-- CTA Banner -->
     <section class="contact-cta-banner">
       <div class="cta-top" data-aos="fade-up">
-        <img src="/images/section6logo.png" alt="SquareUp" class="cta-logo" />
+        <img :src="`${base}images/section6logo.png`" alt="SquareUp" class="cta-logo" />
         <div class="cta-text">
           <h3 class="cta-h3">Today, SquareUp Continues to Thrive as a Leading Digital Product Agency.....</h3>
           <p class="cta-p">Combining the power of design, engineering, and project management to create transformative digital experiences. They invite you to join them on their journey and discover how they can help bring your digital ideas to life.</p>
@@ -172,6 +172,7 @@ import TheNavbar   from '../components/TheNavbar.vue'
 import TheFooter   from '../components/TheFooter.vue'
 import ContactForm from '../components/ContactForm.vue'
 
+const base = import.meta.env.BASE_URL
 const openFaq = ref(null)
 
 const faqs = [

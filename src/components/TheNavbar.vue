@@ -47,6 +47,7 @@
 <script setup>
 import { ref } from 'vue'
 
+const base = import.meta.env.BASE_URL
 const menuOpen = ref(false)
 function toggleMenu() {
   menuOpen.value = !menuOpen.value

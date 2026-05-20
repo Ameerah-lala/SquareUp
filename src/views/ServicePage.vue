@@ -20,7 +20,7 @@
           <h4 class="h2os" data-aos="fade-up">{{ group.heading }}</h4>
           <div class="row g-0">
             <div v-for="(item, i) in group.items" :key="item.text" class="col-6 col-md-3 mdv" data-aos="fade-up" :data-aos-delay="i * 80">
-              <img :src="`/images/${item.img}`" :alt="item.text" />
+              <img :src="`${base}images/${item.img}`" :alt="item.text" />
               <p class="p2os">{{ item.text }}</p>
             </div>
           </div>
@@ -30,7 +30,7 @@
 
     <!-- CTA -->
     <section class="s4ahs">
-      <img src="/images/s4ospimg.png" alt="" data-aos="fade-up" />
+      <img :src="`${base}images/s4ospimg.png`" alt="" data-aos="fade-up" />
       <h3 class="hos4" data-aos="fade-up" data-aos-delay="100">Let us Bring your Ideas to Life in the Digital World.</h3>
       <p class="pos4" data-aos="fade-up" data-aos-delay="200">No matter which services you choose, we are committed to delivering exceptional results that exceed your expectations.</p>
       <button class="btnos4" data-aos="fade-up" data-aos-delay="300">Start Project</button>
@@ -43,6 +43,8 @@
 <script setup>
 import TheNavbar from '../components/TheNavbar.vue'
 import TheFooter from '../components/TheFooter.vue'
+
+const base = import.meta.env.BASE_URL
 
 const serviceSections = [
   {

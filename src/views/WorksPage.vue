@@ -20,7 +20,7 @@
         <div v-for="(work, i) in works" :key="work.title" class="col-md-6 work-card-wrap" data-aos="fade-up" :data-aos-delay="(i % 2) * 100">
           <h3 class="work-h3">{{ work.title }}</h3>
           <div class="work-card">
-            <img :src="`/images/${work.img}`" :alt="work.title" class="work-img" />
+            <img :src="`${base}images/${work.img}`" :alt="work.title" class="work-img" />
             <div class="work-meta">
               <div class="work-meta-left">
                 <h5 class="work-client">{{ work.client }}</h5>
@@ -54,6 +54,8 @@
 <script setup>
 import TheNavbar from '../components/TheNavbar.vue'
 import TheFooter from '../components/TheFooter.vue'
+
+const base = import.meta.env.BASE_URL
 
 const works = [
   {

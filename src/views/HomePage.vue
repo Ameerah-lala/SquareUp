@@ -22,7 +22,7 @@
       <p class="brands-label" data-aos="fade-up">Trusted By 250+ Companies</p>
       <div class="brands-row">
         <div v-for="(brand, i) in brands" :key="brand.alt" class="brand-cell" data-aos="fade-up" :data-aos-delay="i * 80">
-          <img :src="`/images/${brand.file}`" :alt="brand.alt" class="brand-img" />
+          <img :src="`${base}images/${brand.file}`" :alt="brand.alt" class="brand-img" />
         </div>
       </div>
     </section>
@@ -36,7 +36,7 @@
       <div class="row dv2os2ahs">
         <div v-for="(svc, i) in services" :key="svc.title" class="col-md-4 dvodv2s2 d-flex flex-column" data-aos="fade-up" :data-aos-delay="i * 100">
           <div class="svc-card-header">
-            <img :src="`/images/${svc.icon}`" :alt="svc.title" class="imgos2" />
+            <img :src="`${base}images/${svc.icon}`" :alt="svc.title" class="imgos2" />
             <h3 class="h2os2">{{ svc.title }}</h3>
           </div>
           <p class="p2os2">{{ svc.desc }}</p>
@@ -54,7 +54,7 @@
       <div class="row dv2os3ahs">
         <div v-for="(reason, i) in whyUs" :key="reason.title" class="col-md-6 dvodv2s3" data-aos="fade-up" :data-aos-delay="i * 100">
           <div class="d-flex align-items-center">
-            <img :src="`/images/${reason.icon}`" :alt="reason.title" class="imgos3" />
+            <img :src="`${base}images/${reason.icon}`" :alt="reason.title" class="imgos3" />
             <h3 class="h2os3">{{ reason.title }}</h3>
           </div>
           <p class="p2os3">{{ reason.desc }}</p>
@@ -74,7 +74,7 @@
           <p class="p2os4">{{ t.body }}</p>
           <div class="dv2odv2s4 justify-content-between d-flex mt-4">
             <div class="d-flex align-items-center">
-              <img :src="`/images/${t.avatar}`" :alt="t.name" class="imgos4" />
+              <img :src="`${base}images/${t.avatar}`" :alt="t.name" class="imgos4" />
               <div>
                 <h6 class="h3os4">{{ t.name }}</h6>
                 <p class="p3os4 mb-0">{{ t.role }}</p>
@@ -117,7 +117,7 @@
     <!-- CTA + Contact -->
     <section class="text-center s6ahs">
       <div class="dv1os6ahs">
-        <img src="/images/section6logo.png" alt="" class="imgos6" data-aos="fade-up" />
+        <img :src="`${base}images/section6logo.png`" alt="" class="imgos6" data-aos="fade-up" />
         <h3 class="h1os6" data-aos="fade-up" data-aos-delay="100">Thank you for your Interest in SquareUp.</h3>
         <p class="p1os6" data-aos="fade-up" data-aos-delay="200">We would love to hear from you and discuss how we can help bring your digital ideas to life.</p>
         <button class="btn btnos6" data-aos="fade-up" data-aos-delay="300">Start Project</button>
@@ -135,7 +135,7 @@ import TheFooter   from '../components/TheFooter.vue'
 import ContactForm from '../components/ContactForm.vue'
 import { ref } from 'vue'
 
-const servicesBg = {}
+const base = import.meta.env.BASE_URL
 
 // FAQ
 const openIndex = ref(0)
